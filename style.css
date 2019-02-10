@@ -1,0 +1,102 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+}
+
+.videoMain {
+    display: flex;
+    position: relative;
+    background-color: black;
+
+    min-width: 300px;
+    max-width: 800px;
+    /* those data are for change */
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.video {
+    width: 100%;
+}
+
+.control {
+    min-height: 20px;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+
+    transform: translateY(90%);
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.videoMain:hover .control {
+    transform: translateY(0);
+}
+
+.bar{
+    width: 100%;
+    height: 7px;
+}
+
+.barFill {
+    height: 100%;
+    width: 0%;
+    background-color: rgb(221, 31, 31);
+}
+
+.buttons {
+    padding: 7px;
+    font-size: 27px;
+
+    justify-content: space-between;
+}
+
+.pauseBtn{
+    display: flex;
+}
+
+.pauseBtn button{
+    display: flex;
+    padding: 0;
+    font-size: 24px;
+
+    background: none;
+    border: none;
+    color: white;
+}
+
+.pauseBtn button:hover {
+    cursor: pointer;
+}
+
+.pauseBtn button::before {
+    content:'\f144';
+    font-family: 'Font Awesome 5 Free';
+}
+
+.pauseBtn button.play::before {
+    content:'\f144';
+}
+.pauseBtn button.pause::before {
+    content:'\f28b';
+}
