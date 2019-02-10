@@ -1,5 +1,6 @@
 var video = document.querySelector('.video');
 var btn = document.querySelector('.pauseBtn button');
+var progress = document.querySelector('.bar');
 var bar = document.querySelector('.barFill');
 
 function togleVideo() {
@@ -26,5 +27,12 @@ video.onclick = () => {
 
 video.addEventListener('timeupdate', ()=>{
     var percent = (video.currentTime / video.duration)*100;
-    bar.style.width = percent+"%";
+    console.log(percent);
+    progress.value = percent;
 })
+
+progress.addEventListener('click', function(e) {
+    var pos = (e.clientX - this.offsetLeft) / this.offsetWidth;
+    console.log(pos);
+    video.currentTime = pos * video.duration;
+ });
