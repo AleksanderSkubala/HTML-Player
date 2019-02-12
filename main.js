@@ -1,8 +1,13 @@
 var video = document.querySelector('.video');
 var videoMain = document.querySelector('.videoMain');
+
+var control = document.querySelector('.control');
 var btn = document.querySelector('.pauseBtn button');
+
 var bar = document.querySelector('.barFill');
 var barAll = document.querySelector('.bar');
+
+var name = document.querySelector('name').innerHTML;
 
 function togleVideo() {
     if(video.paused) {
@@ -39,9 +44,13 @@ video.addEventListener('timeupdate', ()=>{
     bar.style.width = percent+"%";
 })
 
-// video.addEventListener('hover', ()=>{
-//     _.debounce
-// })
+video.addEventListener('mousemove', _.debounce(()=>{
+    control.classList.add('hidden');
+}, 3000))
+
+video.addEventListener('mouseout', ()=>{
+    control.classList.remove('hidden');
+})
 
 barAll.addEventListener('click', function(e) {
     x = this.offsetLeft - this.scrollLeft;
