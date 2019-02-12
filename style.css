@@ -54,20 +54,18 @@ body, html {
 
 .bar{
     width: 100%;
-    height: 8px;
-    margin: 0;
-    padding: 0;
-
-    -webkit-appearance: none;
-    appearance: none;
+    height: 7px;
 }
 
-.bar::-webkit-progress-value {
-    background: #20a064;
+.barFill {
+    height: 100%;
+    width: 0%;
+    background-color: rgb(31, 221, 88);
+    /* background-color: rgb(221, 31, 31); */
 }
 
 .buttons {
-    padding: 7px;
+    padding: 5px 7px 7px;
     font-size: 27px;
 
     justify-content: space-between;

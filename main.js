@@ -1,7 +1,8 @@
 var video = document.querySelector('.video');
+var videoMain = document.querySelector('.videoMain');
 var btn = document.querySelector('.pauseBtn button');
-var progress = document.querySelector('.bar');
 var bar = document.querySelector('.barFill');
+var barAll = document.querySelector('.bar');
 
 function togleVideo() {
     if(video.paused) {
@@ -17,6 +18,14 @@ function togleVideo() {
     }
 }
 
+function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+    return {
+      left: rect.left + window.scrollX,
+      top: rect.top + window.scrollY
+    };
+}
+
 btn.onclick = () => {
     togleVideo();
 }
@@ -27,12 +36,15 @@ video.onclick = () => {
 
 video.addEventListener('timeupdate', ()=>{
     var percent = (video.currentTime / video.duration)*100;
-    console.log(percent);
-    progress.value = percent;
+    bar.style.width = percent+"%";
 })
 
-progress.addEventListener('click', function(e) {
-    var pos = (e.clientX - this.offsetLeft) / this.offsetWidth;
-    console.log(pos);
+// video.addEventListener('hover', ()=>{
+//     _.debounce
+// })
+
+barAll.addEventListener('click', function(e) {
+    x = this.offsetLeft - this.scrollLeft;
+    var pos = (e.clientX - getOffset(barAll).left) / this.offsetWidth;
     video.currentTime = pos * video.duration;
  });

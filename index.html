@@ -12,7 +12,9 @@
             <div class="videoMain">
                 <video class="video" src="myFile.mp4"></video>
                 <div class="control">
-                    <progress class="bar" value="0" min="0" max="100"></progress>
+                    <div class="bar">
+                        <div class="barFill"></div>
+                    </div>
                     <div class="buttons">
                         <div class="pauseBtn">
                             <button></button>
@@ -20,10 +22,12 @@
                     </div>
                 </div>
             </div>
-            <video width="800" controls>
+
+            <!-- Built-in video palyer -->
+            <!-- <video width="800" controls>
                     <source src="myFile.mp4" type="video/mp4">
                     Your browser does not support the video tag.
-            </video>
+            </video> -->
         </div>
 
         <script src="main.js"></script>
