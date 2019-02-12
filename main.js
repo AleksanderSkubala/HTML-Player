@@ -48,9 +48,13 @@ video.addEventListener('mousemove', _.debounce(()=>{
     control.classList.add('hidden');
 }, 3000))
 
-video.addEventListener('mouseout', ()=>{
+video.addEventListener('mousemove', ()=>{
     control.classList.remove('hidden');
 })
+
+// video.addEventListener('mouseout', ()=>{
+//     control.classList.remove('hidden');
+// })
 
 barAll.addEventListener('click', function(e) {
     x = this.offsetLeft - this.scrollLeft;
