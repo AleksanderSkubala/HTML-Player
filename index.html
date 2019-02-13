@@ -11,25 +11,31 @@
     <body>
         <div class="container">
             <div class="videoMain">
-                <name>BBB</name>
                 <video class="video" src="myFile.mp4"></video>
                 <div class="control">
                     <div class="bar">
                         <div class="barFill"></div>
                     </div>
                     <div class="buttons">
-                        <div class="pauseBtn">
-                            <button></button>
+                        <div id="btnLeft">
+                            <div class="pauseBtn">
+                                <button></button>
+                            </div>
+                            <div class="time">
+                                <div class="currentTime">0:0</div>
+                                <div> / </div>
+                                <div class="duration">0:0</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Built-in video palyer -->
-            <!-- <video width="800" controls>
+            <video width="800" controls>
                     <source src="myFile.mp4" type="video/mp4">
                     Your browser does not support the video tag.
-            </video> -->
+            </video>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
