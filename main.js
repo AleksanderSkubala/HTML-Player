@@ -70,18 +70,31 @@ video.addEventListener('timeupdate', ()=>{
     }
 
     current.innerHTML = `${min}:${sec}`;
+
+    if(video.currentTime===video.duration){
+        btn.className="play";
+    }
 })
 
 video.addEventListener('mousemove', _.debounce(()=>{
     control.classList.add('hidden');
-}, 5000))
+}, 3500))
 
 video.addEventListener('mousemove', ()=>{
     control.classList.remove('hidden');
 })
 
 barAll.addEventListener('click', function(e) {
-    x = this.offsetLeft - this.scrollLeft;
     var pos = (e.clientX - getOffset(barAll).left) / this.offsetWidth;
     video.currentTime = pos * video.duration;
  });
+
+ document.onkeypress = function(e) {
+    e = e || window.event;
+    var charCode = e.keyCode || e.which;
+    var charStr = String.fromCharCode(charCode);
+    
+    if(charStr==='k'){
+        togleVideo();
+    }
+};
