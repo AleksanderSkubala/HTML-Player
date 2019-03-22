@@ -93,7 +93,7 @@ barAll.addEventListener('click', function(e) {
     e = e || window.event;
     var charCode = e.keyCode || e.which;
     var charStr = String.fromCharCode(charCode);
-    
+
     if(charStr==='k'){
         togleVideo();
     }
